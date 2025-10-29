@@ -14,7 +14,7 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
 
 O que se propôs a fazer:
     - Juntar o 1,2,3,4 (Parte 1 - Desenvolvimento da aplicação)
-    - Fazer o 4,5,6,7 (Parte 1 - Desenvolvimento da aplicação)
+    - Fazer o 5,6,7,8 (Parte 1 - Desenvolvimento da aplicação)
 O que foi feito:
     - Juntar o 1,2,3,4 (Parte 1 - Desenvolvimento da aplicação)
     - 

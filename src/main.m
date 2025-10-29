@@ -133,6 +133,114 @@ end
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%5.CÁLCULO DA ATENUAÇÃO ESPAÇO LIVRE%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- PARÂMETROS DA LIGAÇÃO ---
+d = 45;              % Distância [km] - conforme enunciado
+f_MHz = 6000;        % Frequência [MHz] - 6 GHz
+
+% --- FÓRMULA ITU-R PN.525-2 ---
+A0_dB = 32.4 + 20*log10(d) + 20*log10(f_MHz);
+
+% --- RESULTADO ---
+fprintf('PARÂMETROS:\n');
+fprintf('  Distância: %.1f km\n', d);
+fprintf('  Frequência: %.1f GHz\n', f_MHz/1000);
+fprintf('\nRESULTADO:\n');
+fprintf('  Atenuação em espaço livre: %.2f dB\n', A0_dB);
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%6.CALCULO DAS HORIZONTAIS E ANGULOS DE FOGO %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- PARÂMETROS ---
+d = 45;          % Distância [km]
+h_tx = 40;       % Altura antena TX [m]
+h_rx = 150;      % Altura antena RX [m]
+R = 6370;        % Raio Terra [km]
+
+% --- CÁLCULOS ---
+% Horizontais no sistema Europeu
+horizontal_tx = atand(d/(2*R)) * 180/pi;
+horizontal_rx = atand(d/(2*R)) * 180/pi;
+
+% Ângulos de fogo
+angulo_fogo_tx = atand((h_rx - h_tx)/d) + horizontal_tx;
+angulo_fogo_rx = atand((h_tx - h_rx)/d) + horizontal_rx;
+
+% --- RESULTADOS ---
+fprintf('HORIZONTAIS:\n');
+fprintf('  Horizontal TX: %.4f°\n', horizontal_tx);
+fprintf('  Horizontal RX: %.4f°\n', horizontal_rx);
+
+fprintf('\nÂNGULOS DE FOCO:\n');
+fprintf('  Ângulo fogo TX: %.4f°\n', angulo_fogo_tx);
+fprintf('  Ângulo fogo RX: %.4f°\n', angulo_fogo_rx);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%7.CALCULO DA LOCALIZAÇÃO DO PONTO DE REFLEXÃO E FATOR DE DIVERGÊNCIA%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- PARÂMETROS ---
+d = 45;          % Distância [km]
+h_tx = 40;       % Altura TX [m]  
+h_rx = 150;      % Altura RX [m]
+R = 6370;        % Raio Terra [km]
+
+% --- PONTO DE REFLEXÃO (aproximado) ---
+d1 = d * h_tx/(h_tx + h_rx);  % Distância do TX ao ponto de reflexão
+
+% --- FATOR DE DIVERGÊNCIA ---
+psi = atand((h_tx + h_rx)/d); % Ângulo de incidência
+D = 1/sqrt(1 + (2*d1*(d-d1))/(R*d*sind(psi))); % Fator divergência
+
+% --- RESULTADOS ---
+fprintf('PONTO DE REFLEXÃO:\n');
+fprintf('  Distância do TX: %.2f km\n', d1);
+fprintf('  Distância do RX: %.2f km\n', d-d1);
+
+fprintf('\nFATOR DE DIVERGÊNCIA:\n');
+fprintf('  Ângulo incidência: %.4f°\n', psi);
+fprintf('  Fator divergência: %.4f\n', D);
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%8.Diferença de fase entre o campo associado ao raio direto e o associado ao raio refletido no terreno%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- PARÂMETROS ---
+d = 45;          % Distância [km] 
+h_tx = 40;       % Altura TX [m]  
+h_rx = 150;      % Altura RX [m]
+f = 6e9;         % Frequência [Hz]
+c = 3e8;         % Velocidade luz [m/s]
+
+% --- DIFERENÇA DE PERCURSO ---
+% Slide 12: Δr = (2 * h_tx * h_rx) / d
+lambda = c/f;
+delta_r = (2 * h_tx * h_rx) / (d * 1000); % [m]
+
+% --- DIFERENÇA DE FASE ---
+% Slide 13: Δφ = -k₀Δr + arg(Γ)
+delta_phi = (2 * pi * delta_r / lambda) * (180/pi); % [graus]
+
+% --- COEFICIENTE DE FRESNEL ---
+% Slide 13: Γ = |Γ|e^(j arg(Γ))
+% Slide 14: Para terra plana, incidência razante → Γ ≈ -1
+Gamma = -1;
+
+% --- RESULTADOS ---
+fprintf('DIFERENÇA DE FASE (Slide 12-13):\n');
+fprintf('  Diferença percurso: %.4f m\n', delta_r);
+fprintf('  Comprimento onda: %.4f m\n', lambda);
+fprintf('  Diferença fase: %.2f°\n', delta_phi);
+
+fprintf('\nCOEFICIENTE DE FRESNEL (Slide 13-14):\n');
+fprintf('  Γ = %.1f\n', Gamma);
+
 
 
 

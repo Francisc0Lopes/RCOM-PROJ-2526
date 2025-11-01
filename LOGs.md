@@ -26,3 +26,15 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
 ## COMENTARIO:
 - Consegui juntar todos os exercicios até ao 16 main.m, a aplicação em si ainda nao esta feita.
 
+### 01-11-2025. 11:40 - 13:00 (Francisco Lopes) 53 dias deadline
+
+## O QUE SE PROPÔS A FAZER:
+    - Testar fórmulas do exercício 9
+## O QUE FOI FEITO:
+    - Testar fórmulas do exercício 9
+## O QUE FALTA:
+    - Tirar conclusões
+## COMENTARIO:
+    - Os valores estão estranhos, tenho que perguntar ao stor sobre as fórmulas
+    - Se aumentar a distância, a atenuação quase não altera 
+

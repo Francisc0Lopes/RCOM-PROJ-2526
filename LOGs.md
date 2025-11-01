@@ -26,7 +26,7 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
 ## COMENTARIO:
 - Consegui juntar todos os exercicios até ao 16 main.m, a aplicação em si ainda nao esta feita.
 
-### 01-11-2025. 11:40 - 13:00 (Francisco Lopes) 53 dias deadline
+### 01-11-2025. 11:40 - 13:00 (João Galveia) 50 dias deadline
 
 ## O QUE SE PROPÔS A FAZER:
     - Testar fórmulas do exercício 9

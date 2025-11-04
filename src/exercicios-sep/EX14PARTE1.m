@@ -26,9 +26,9 @@ X = beta1*dmetros*((pi/(lambda*a_ef^2))^(1/3));
 Y1 = 2*beta1*h_tx*(((pi^2)/((lambda^2) *a_ef))^(1/3));
 Y2 = 2*beta1*h_rx*(((pi^2)/((lambda^2) *a_ef))^(1/3));
 
-F= 11+10*log(X)-17.6*X100;
-G1 = 17.6*(sqrt(Y1-1.1))-5*log(Y1-1.1)-8;
-G2 = 17.6*(sqrt(Y2-1.1))-5*log(Y2-1.1)-8;
+F= 11+10*log10(X)-17.6*X;
+G1 = 17.6*(sqrt(Y1-1.1))-5*log10(Y1-1.1)-8;
+G2 = 17.6*(sqrt(Y2-1.1))-5*log10(Y2-1.1)-8;
 
 Aed = -(F+G1+G2);
 
@@ -64,9 +64,12 @@ fprintf('  X_rx: %.3f\n', X_rx);
 fprintf('  Y_tx: %.3f\n', Y_tx);
 fprintf('  Y_rx: %.3f\n', Y_rx);
 fprintf('  C: %.3f\n\n', C);
+fprintf('  Aed: %.3f\n',Aed);
+
 
 fprintf('RESULTADO:\n');
 fprintf('  Perda por difração: %.2f dB\n', L_dif);
+fprintf(' Atenuação para 100km : %.3f dB\n',Aed);
 
 if C < 1.6
     fprintf('  Região: Interferência\n');

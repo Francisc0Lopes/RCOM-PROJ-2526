@@ -59,18 +59,16 @@ fprintf('  Ângulo elevação: %.1f°\n', theta);
 fprintf('  Índice refração N0: %.0f N-units\n\n', N0);
 fprintf("Parametro Meteorologico para clima tipo 5: %.0f",M);
 fprintf("Parametro tradutor da estrutura da atmosfera para tipo 5: %.2f",ypslon);
-fprintf("Ganho das antenas de receção e emissão Gr: %.0f  Ge: %.0f",Gr,Ge);
-
+fprintf("Ganho das antenas de rece")
 
 fprintf('COMPONENTES DA PERDA (50%% tempo):\n');
-% fprintf('  Termo frequência: %.2f dB\n', L_f);
-% fprintf('  Termo distância: %.2f dB\n', L_d);
-% fprintf('  Termo angular: %.2f dB\n', L_theta);
-% fprintf('  Termo climático: %.2f dB\n', L_N);
-%fprintf('  Perda básica: %.2f dB\n\n', L_bs);
-fprintf('Perda : %.2f dB\n',A);
+fprintf('  Termo frequência: %.2f dB\n', L_f);
+fprintf('  Termo distância: %.2f dB\n', L_d);
+fprintf('  Termo angular: %.2f dB\n', L_theta);
+fprintf('  Termo climático: %.2f dB\n', L_N);
+fprintf('  Perda básica: %.2f dB\n\n', L_bs);
 
-% fprintf('PERDA PARA DIFERENTES PERCENTIS:\n');
-% fprintf('  0.1%% do tempo: %.2f dB\n', L_01);
-% fprintf('  50%% do tempo: %.2f dB\n', L_bs);
-% fprintf('  99.9%% do tempo: %.2f dB\n', L_999);
+fprintf('PERDA PARA DIFERENTES PERCENTIS:\n');
+fprintf('  0.1%% do tempo: %.2f dB\n', L_01);
+fprintf('  50%% do tempo: %.2f dB\n', L_bs);
+fprintf('  99.9%% do tempo: %.2f dB\n', L_999);

@@ -250,10 +250,10 @@ fprintf('  Γ = %.1f\n', Gamma);
 
 % --- PARÂMETROS ---
 d = 45;          % Distância [km]
-h_tx = 40;       % Altura TX [m]  
+h_tx = 150;      % Altura TX [m]  
 h_rx = 150;      % Altura RX [m]
 R = 6370;        % Raio Terra [km]
-f = 6e9;         % Frequência [Hz]
+f = 1e9;         % Frequência [Hz]
 c = 3e8;         % Velocidade luz [m/s]
 
 % --- TERRA PLANA (Slide 12) ---
@@ -261,8 +261,8 @@ delta_r_plana = (2 * h_tx * h_rx) / (d * 1000); % [m]
 
 % --- TERRA ESFÉRICA (Slide 26) ---
 % Alturas equivalentes (Slide 24)
-h_tx_eq = h_tx - (d^2)/(2*R*1000);
-h_rx_eq = h_rx - (d^2)/(2*R*1000);
+h_tx_eq = h_tx - ((d/2)^2*1000)/(2*R*1000);
+h_rx_eq = h_rx - ((d/2)^2*1000)/(2*R*1000);
 delta_r_esferica = (2 * h_tx_eq * h_rx_eq) / (d * 1000); % [m]
 
 % --- DIFERENÇA DE FASE ---
@@ -639,5 +639,4 @@ elseif v > -0.78 && v <= 1
 else
     fprintf('  Região: Iluminação\n');
 end
-
 

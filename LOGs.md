@@ -59,6 +59,6 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
     - Rever de novo o português
 
     
-![Introdução](src/images/introducao.png)
+![Introdução](images/introducao.png)
     
 

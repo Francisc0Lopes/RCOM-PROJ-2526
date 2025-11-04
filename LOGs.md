@@ -12,6 +12,10 @@
 ## COMENTÁRIO:
 Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicação pedida pelo enunciado
 
+
+
+
+
 ### 29-10-2025. 13:40 - 15:20 (Francisco Lopes) 53 dias deadline
 
 ## O QUE SE PROPÔS A FAZER:
@@ -26,6 +30,9 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
 ## COMENTARIO:
 - Consegui juntar todos os exercicios até ao 16 main.m, a aplicação em si ainda nao esta feita.
 
+
+
+
 ### 01-11-2025. 11:40 - 13:00 (João Galveia) 50 dias deadline
 
 ## O QUE SE PROPÔS A FAZER:
@@ -37,4 +44,21 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
 ## COMENTARIO:
     - Os valores estão estranhos, tenho que perguntar ao stor sobre as fórmulas
     - Se aumentar a distância, a atenuação quase não altera 
+
+
+
+
+### 04-11-2025. 14:00 - 14:40 (Francisco Lopes) 47 dias deadline
+
+## O QUE SE PROPÔS A FAZER:
+    - Introdução
+## O QUE FOI FEITO:
+    - Introdução
+
+## COMENTARIO:
+    - Rever de novo o português
+
+    
+![Introdução](src/images/introducao.png)
+    
 

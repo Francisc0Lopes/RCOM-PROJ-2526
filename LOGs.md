@@ -61,4 +61,13 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
     
 ![Introdução](src/images/introducao.png)
     
+### 11-11-2025. 14:00 - 15:16 (Joao Dragovic) 40 dias deadline
 
+## O QUE SE PROPÔS A FAZER:
+    - Fazer 8 da Parte 2
+## O QUE FOI FEITO:
+    - Exercicio 8 da Parte 2 (Gráficos inclusive)
+
+## COMENTARIO:
+    - PReciso de verificar com o professor se parecem bem
+    

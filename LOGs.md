@@ -70,4 +70,16 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
 
 ## COMENTARIO:
     - PReciso de verificar com o professor se parecem bem
+
+
+
+    
+### 11-11-2025. 15:40 - 18:40 (João Galveia) 40 dias deadline
+
+## O QUE SE PROPÔS A FAZER:
+    - Fazer exercício 9
+## O QUE FOI FEITO:
+    - Exercício 9
+## COMENTARIO:
+    - Já tirei as conclusões. Agora é ver se estão bem e por no relatório
     

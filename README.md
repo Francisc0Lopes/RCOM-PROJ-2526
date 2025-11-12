@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 ![Duração](https://img.shields.io/badge/duração-12_outubro_→_21_dezembro-blue)
-![Dias Restantes](https://img.shields.io/endpoint?url=<URL_do_teu_endpoint>&label=dias%20restantes&color=yellow)
+![Dias Restantes](https://img.shields.io/endpoint?url=https%3A%2F%2Fteu‑endpoint.exemplo%2Fdias.json&label=dias%20restantes&color=yellow)
 ![Ferramenta](https://img.shields.io/badge/ferramenta-MATLAB-red)
 ![Relatório](https://img.shields.io/badge/relatório-Overleaf_(LaTeX)-green)
 ![Licença](https://img.shields.io/badge/licença-académica-lightgrey)

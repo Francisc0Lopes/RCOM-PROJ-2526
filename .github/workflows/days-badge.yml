@@ -1,0 +1,39 @@
+name: Atualizar Badge Dias Restantes
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Executa diariamente à meia-noite UTC
+  workflow_dispatch:      # Permite disparar manualmente
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Calcular Dias Restantes
+        id: dias
+        run: |
+          DIA_FINAL="2025-12-21"
+          DIAS=$(( ( $(date -d $DIA_FINAL +%s) - $(date +%s) ) / 86400 ))
+          echo "DIAS_RESTANTES=$DIAS" >> $GITHUB_ENV
+
+      - name: Gerar Badge
+        run: |
+          echo "Criando badge com $DIAS_RESTANTES dias restantes..."
+          mkdir -p badges
+          echo "{
+            \"schemaVersion\": 1,
+            \"label\": \"dias restantes\",
+            \"message\": \"$DIAS_RESTANTES\",
+            \"color\": \"yellow\"
+          }" > badges/days.json
+
+      - name: Commit & Push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add badges/days.json
+          git commit -m "Atualizar badge dias restantes" || echo "Nada para atualizar"
+          git push

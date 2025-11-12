@@ -82,4 +82,15 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
     - Exercício 9
 ## COMENTARIO:
     - Já tirei as conclusões. Agora é ver se estão bem e por no relatório
+
+
+### 12-11-2025. 14:00 - 16:34 (Joao Dragovic) 39 dias deadline
+
+## O QUE SE PROPÔS A FAZER:
+    - Certificar que o 8 da parte 2 está correto.
+## O QUE FOI FEITO:
+    - Corrigir o 8 e confirmar os valores com o professor
+
+## COMENTARIO:
+    -  o gráfico talvez precise de um toque 
     

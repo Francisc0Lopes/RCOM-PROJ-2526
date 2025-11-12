@@ -84,18 +84,6 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
     - Já tirei as conclusões. Agora é ver se estão bem e por no relatório
 
 
-<<<<<<< HEAD
-### 12-11-2025. 14:00 - 16:34 (Joao Dragovic) 39 dias deadline
-
-## O QUE SE PROPÔS A FAZER:
-    - Certificar que o 8 da parte 2 está correto.
-## O QUE FOI FEITO:
-    - Corrigir o 8 e confirmar os valores com o professor
-
-## COMENTARIO:
-    -  o gráfico talvez precise de um toque 
-    
-=======
 ### 11-11-2025. 15:30 - 18:10 (Francisco Lopes) 39 dias deadline
 
 ## O QUE SE PROPÔS A FAZER:
@@ -120,4 +108,3 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
 ## COMENTARIO:
     -  os gráficos talvez precisem de um toque 
     
->>>>>>> a9b361b4f939a00865f9cbd1e3a569dd958a50a0

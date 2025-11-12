@@ -1,0 +1,54 @@
+
+% --- PARÂMETROS ---
+d = 0.01;          % Distância [km]
+h_tx = 150;       % Altura TX [m]  
+h_rx = 150;      % Altura RX [m]
+R = 6370;        % Raio Terra [km]
+f = 6e9;         % Frequência [Hz]
+c = 3e8;         % Velocidade luz [m/s]
+
+fase_array_diff= [];
+dist_array = [];
+
+while d<200
+
+% --- TERRA PLANA (Slide 12) ---
+delta_r_plana = (2 * h_tx * h_rx) / (d * 1000); % [m]
+
+% --- TERRA ESFÉRICA (Slide 26) ---
+% Alturas equivalentes (Slide 24)
+d1 = (h_tx/(h_tx + h_rx)) * d * 1000;   % [m]
+d2 = (h_rx/(h_tx + h_rx)) * d * 1000;   % [m]
+h_tx_eq = h_tx - (d1.^2) / (2 * R * 1000); % [m]
+h_rx_eq = h_rx - (d2.^2) / (2 * R * 1000); % [m]
+delta_r_esferica = (2 * h_tx_eq * h_rx_eq) / (d * 1000); % [m]
+
+% --- DIFERENÇA DE FASE ---
+lambda = c/f; % [m]
+delta_phi_plana = ((2 * pi)/lambda) * delta_r_plana; % [rad]
+delta_phi_esferica = ((2 * pi)/lambda) * delta_r_esferica; % [rad]
+dif_rad = delta_phi_plana - delta_phi_esferica; % [rad]
+
+
+dif_fase_rad= (((2 * pi)/lambda)*(d^4)*1000*h_tx)/(lambda*16*r*d*1000*(((d^2)*1000)/4));
+
+fase_array_diff(end+1)=dif_fase_rad;
+dist_array(end+1)=d;
+
+d=d+0.01;
+
+end
+
+
+% Basicamente buscar a distancia na qual a diferença de fase seja 1 rad
+% (90km)
+%Ou seja a partir dos 90km  é usado o modelo de terra esférica!
+
+% Se d<90km usar Terra Plana
+% Se d>90km usar Terra Esférica
+figure(1)
+plot(dist_array,fase_array_diff)
+title("Diferença de fase entre Terra Plana e Terra Esférica em relação à distancia")
+ylabel("Diferença de fase [rad]")
+xlabel("Distancia [km]")
+

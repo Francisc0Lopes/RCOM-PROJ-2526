@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 ![Duração](https://img.shields.io/badge/duração-12_outubro_→_21_dezembro-blue)
-![Dias Restantes](https://img.shields.io/endpoint?url=https://runkit.com/teu_usuario/dias-restantes)
+![Dias Restantes](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Francisc0Lopes/RCOM-PROJ-2526/main/badges/days.json)
 ![Ferramenta](https://img.shields.io/badge/ferramenta-MATLAB-red)
 ![Relatório](https://img.shields.io/badge/relatório-Overleaf_(LaTeX)-green)
 ![Licença](https://img.shields.io/badge/licença-académica-lightgrey)

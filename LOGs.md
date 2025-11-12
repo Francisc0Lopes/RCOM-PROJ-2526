@@ -82,4 +82,15 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
     - Exercício 9
 ## COMENTARIO:
     - Já tirei as conclusões. Agora é ver se estão bem e por no relatório
+
+
+### 11-11-2025. 15:30 - 18:10 (Francisco Lopes) 39 dias deadline
+
+## O QUE SE PROPÔS A FAZER:
+    - Primeira interface , texto do desenvolvimento da aplicação
+## O QUE FOI FEITO:
+    - Primeira interface , texto do desenvolvimento da aplicação
+## COMENTARIO:
+    - Muito feio, mas funciona, meter mais bonito i guess
+
     

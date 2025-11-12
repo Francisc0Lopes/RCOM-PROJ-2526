@@ -93,4 +93,18 @@ Como decidido pelo grupo foi escolhida a linguagem MATLAB para criar a aplicaç�
 ## COMENTARIO:
     - Muito feio, mas funciona, meter mais bonito i guess
 
+
+
+### 12-11-2025. 14:00 - 17:47 (Joao Dragovic) 39 dias deadline
+
+## O QUE SE PROPÔS A FAZER:
+    - Certificar que o 8 da parte 2 está correto.
+    - Fazer o 3 da parte 2 e certificar que tá certo
+## O QUE FOI FEITO:
+    - Corrigir o 8 e confirmar os valores com o professor
+    - 3 da parte 2 feito e confirmado com o prof
+    - Comentarios no 3 parte 2 a explicar o gráfico
+
+## COMENTARIO:
+    -  os gráficos talvez precisem de um toque 
     

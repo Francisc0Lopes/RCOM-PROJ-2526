@@ -46,7 +46,14 @@ end
 
 % Se d<90km usar Terra Plana
 % Se d>90km usar Terra Esférica
+
+percentagem = (delta_r_plana-delta_r_esferica)/delta_r_plana;
+
+array1 = ones(1,20000);
+
 figure(1)
+plot(dist_array,array1)
+hold on
 plot(dist_array,fase_array_diff)
 title("Diferença de fase entre Terra Plana e Terra Esférica em relação à distancia")
 ylabel("Diferença de fase [rad]")

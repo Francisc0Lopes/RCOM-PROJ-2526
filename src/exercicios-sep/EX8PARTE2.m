@@ -8,8 +8,8 @@ N0 = 320;               % Índice de refração à superfície [N-units]
 M = 33.20;              % Parametro meteorologico dado para clima tipo 7a 
 ypslon = 0.27;          % Parametro que traduz a estrutura da atmosfera para clima tipo 7a
 r = 8500;               %Raio efetivo da terra [km]
-Ge = 8;                 %Ganho de emissão [dB]
-Gr= 8;                  % Ganho de receção [dB]
+Ge = 10;                 %Ganho de emissão [dB]
+Gr= 10;                  % Ganho de receção [dB]
 
 
 

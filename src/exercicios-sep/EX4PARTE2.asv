@@ -1,0 +1,56 @@
+
+% --- PARÂMETROS ---
+P_tx = 10;              % Potência TX [W] - Slide 2
+d = 45;                 % Distância [km]
+f = 6;                % Frequência [GHz]
+c = 3e8;                % Velocidade luz [m/s]
+G_tx = 1000;            % Ganho TX 
+G_rx = 1000;            % Ganho RX
+T=25;                   % Temperatura [ºC]
+p=10;                   % Valor médio para conteudo de vapor de agua em Fevereiro em portugal[g/m^3)
+
+
+
+
+atenua_array = [];
+temp_array = [];
+
+while T>-100
+
+    %Para frequencias inferiores a 57Ghz
+
+    %Coeficiente de Oxigenio
+    rT=288/(273+T);
+    rP=p/1013;
+    oxparte1= (7.27*rT)/(f^2 + 0.351*(rP^2)*(rT^2));
+    oxparte2= 7.5/((f-57)^2 + 2.44*(rP^2)*(rT^5));
+    oxparte3= (f^2) * (rP^2) * (rT^2) *10^-3; 
+    gamma_ox= (oxparte1+oxparte2)*oxparte3;
+    
+    %Coeficiente de Vapor de agua
+    vaporparte1= (3.27*10^-2)*rT + (1.67*10^-3)*p*((rT^7)/rP) + 7.7*(10^-4) * f^0.5;
+    vaporparte2 =3.79/((f-22.235)^2 + 9.81*rP^2 * rT);
+    vaporparte3= (11.73^rT)/((f-183.31)^2 +11.85*(rP^2) *rT);
+    vaporparte4= (4.01*rT)/((f-325.153)^2 +10.44*(rP^2)*rT);
+    vaporparte5= (f^2)*p*rP*rT*10^-4;
+    gamma_vapor=(vaporparte1+vaporparte2+vaporparte3+vaporparte4)*vaporparte5;
+
+    atenua=(gamma_ox+gamma_vapor);
+    
+    atenua_array(end+1)=atenua;
+
+    temp_array(end+1) =T ;
+
+    T=T-1;
+end
+
+
+figure(1)
+plot(atenua_array,temp_array,'DisplayName','6 GHz');
+hold on
+ylabel("Temperatura [ºC]")
+xlabel("Atenuacao [dB]")
+title("Atenuação dos gases atmosféricos em função da Temperatura")
+lgd = legend;
+lgd.NumColumns = 2;
+

@@ -1,0 +1,81 @@
+
+% --- PARÂMETROS ---
+    %Zona climática K 
+    m_worst= 42    ;         % Para 0.01% do tempo
+
+%Polarização Horizontal e VErtical para 6 GHz
+k6h=0.00175;
+k6v=0.00155;
+alpha6h=1.308;
+alpha6v=1.265;
+Ri=m_worst;
+
+%Polarização Horizontal e VErtical para 15 GHz
+k15h=0.0367;
+k15v=0.0335;
+alpha15h=1.154;
+alpha15v=1.128;
+
+%Polarização Horizontal e VErtical para 25 GHz
+k25h=0.124;
+k25v=0.113;
+alpha25h=1.061;
+alpha25v=1.030;
+
+%Polarização Horizontal e VErtical para 50 GHz
+k50h=0.536;
+k50v=0.479;
+alpha50h=0.873;
+alpha50v=0.868;
+
+%Polarização Horizontal e VErtical para 100 GHz
+k100h=1.12;
+k100v=1.06;
+alpha100h=0.743;
+alpha100v=0.744;
+
+Q1=2.85;
+beta=0.13;
+%Como p >50%
+Q=Q1*(p/30)^((log(Q1*3^-beta))/log(0.3));
+pm=Q*p;
+
+function [cinquenta,worst_month]= atenuacao(k,alphah,Ri)
+
+    p= 50  ;                 % Atenuação Devido á chuva não exceder 50% do tempo
+
+    d = 45;                 % Distância [km]
+    gamma = k * Ri^alphah;
+    def= d/  (1+  ( d / (35*exp(-0.015*Ri) ) ) );
+
+    Ate_r= gamma*def;
+
+    cinquenta = Ate_r*0.12*p^-(0.546+0.043*log10(p));
+    
+    %Mes mais desfavorável 1% do tempo
+    pm=1;
+    p=0.3*pm^1.15;
+    worst_month =Ate_r*0.12*p^-(0.546+0.043*log10(p));
+
+end
+
+[cinq6,worst6] = atenuacao(k6h,alpha6h,Ri);
+[cinq15,worst15] = atenuacao(k15h,alpha15h,Ri);
+[cinq25,worst25] = atenuacao(k25h,alpha25h,Ri);
+[cinq50,worst50] = atenuacao(k50h,alpha50h,Ri);
+[cinq100,worst100] = atenuacao(k100h,alpha100h,Ri);
+
+array_cinq = [cinq6,cinq15,cinq25,cinq50,cinq100];
+array_worst= [worst6,worst15,worst25,worst50,worst100];
+freq_array = [6,15,25,50,100];
+
+
+figure(1)
+plot(freq_array,array_cinq,'DisplayName','50% do tempo');
+ylabel("Atenuacao [dB]")
+xlabel("Frequencia [GHz]")
+title("Atenuação em relação à frequência")
+hold on
+plot(freq_array,array_worst,'DisplayName','Pior Mês');
+lgd = legend;
+lgd.NumColumns = 2;
